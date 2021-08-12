@@ -58,8 +58,9 @@
         <div class="form">
             <input type="text" id='word' placeholder="Введите ключевое слово">
         </div>
+        <h2 class='text'></h1>
         <div class="result hide">
-            <h2>Следуйте сюда</h1>
+           
                 <img src="" alt="" class='image'>
         </div>
        
@@ -68,13 +69,28 @@
         
 function addEvent(){
     const word = document.querySelector('#word')
+    const arr = ['Неверное слово', 'Ребята!!! Неверно!', 'Надеюсь вы просто не дописали слово', 'Неа, слово не подходит']
+    const text = document.querySelector('.text');
     word.oninput=e=>{
         if(e.target.value.toLowerCase() == 'аркада'){
             const image = document.querySelector('.result')
             const el = document.querySelector('.image')
             el.src='./stars.jpg'
             image.classList.remove('hide')
+             text.innerText = 'Верно, следуйте сюда!'
         }else{
+            if(e.target.value.length > 2){
+                
+            const random =Math.floor(Math.random() * 3)
+           
+                text.innerText = arr[random]
+        
+            }
+            else{
+                text.innerText = ''
+            }
+      
+
             const image = document.querySelector('.result')
             const el = document.querySelector('.image')
             el.src=' '
