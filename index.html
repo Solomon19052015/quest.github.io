@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+       .main{
+          
+       }
+       h1{
+           text-align: center;
+           font-family: Arial;
+           color: rgb(41, 134, 4);
+       }
+       h2{
+        text-align: center;
+           font-family: Arial;
+           color: rgb(32, 32, 32);
+       }
+       .main .result{
+           opacity: 1;
+           transition: all 0.5s ease;
+       }
+       .main .hide{
+           opacity: 0;
+       }
+       .main .form{
+           display: flex;
+           justify-content: center;
+       }
+       .main .form #word{
+           height: 30px;
+           padding: 20px;
+           width: 90%;
+           margin: 0 auto;
+           border-radius: 20px;
+           border: 1px solid rgb(53, 53, 53);
+        color: rgb(63, 63, 63);  
+        font-size: 16px;
+        font-family: Arial;
+        }
+       .main .form #word:focus{
+           outline: none;
+       }
+       img{
+           display: block;
+           margin: 0 auto;
+           width: 90%;
+       }
+
+   </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Квест 2021</h1>
+        <div class="form">
+            <input type="text" id='word' placeholder="Введите ключевое слово">
+        </div>
+        <div class="result hide">
+            <h2>Следуйте сюда</h1>
+                <img src="./stars.jpg" alt="" class='image'>
+        </div>
+       
+    </div>
+    <script>
+        
+function addEvent(){
+    const word = document.querySelector('#word')
+    word.oninput=e=>{
+        if(e.target.value.toLowerCase() == 'аркада'){
+            const image = document.querySelector('.result')
+            image.classList.remove('hide')
+        }
+    }
+}
+addEvent()
+    </script>
+</body>
+</html>
