@@ -60,7 +60,7 @@
         </div>
         <div class="result hide">
             <h2>Следуйте сюда</h1>
-                <img src="./stars.jpg" alt="" class='image'>
+                <img src="" alt="" class='image'>
         </div>
        
     </div>
@@ -71,7 +71,14 @@ function addEvent(){
     word.oninput=e=>{
         if(e.target.value.toLowerCase() == 'аркада'){
             const image = document.querySelector('.result')
+            const el = document.querySelector('.image')
+            el.src='./stars.jpg'
             image.classList.remove('hide')
+        }else{
+            const image = document.querySelector('.result')
+            const el = document.querySelector('.image')
+            el.src=' '
+            image.classList.add('hide')
         }
     }
 }
